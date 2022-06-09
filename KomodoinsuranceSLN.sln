@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16A56D35-A5A5-44CE-B79B-E48AA06FF09A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo.Data", "src\Developer.Data\Komodo.Data.csproj", "{A45345D3-3B08-4004-BFBB-BDEA1756905B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo.Repository", "src\Developer.Repository\Komodo.Repository.csproj", "{E4D4A28A-07DB-4B99-9276-F3EEE3C85884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTeam.Data", "src\DevTeam.Data\DevTeam.Data.csproj", "{345E1578-E2B6-4245-9408-5D06B085908E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTeam.Repository", "src\DevTeam.Repository\DevTeam.Repository.csproj", "{25BE1325-810B-48EF-A183-DEA4AC06AE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komodo.UI", "src\Komodo.UI\Komodo.UI.csproj", "{B9713E52-9D3A-4D3A-98B9-FD7168C131CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A45345D3-3B08-4004-BFBB-BDEA1756905B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45345D3-3B08-4004-BFBB-BDEA1756905B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45345D3-3B08-4004-BFBB-BDEA1756905B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45345D3-3B08-4004-BFBB-BDEA1756905B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D4A28A-07DB-4B99-9276-F3EEE3C85884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D4A28A-07DB-4B99-9276-F3EEE3C85884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D4A28A-07DB-4B99-9276-F3EEE3C85884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D4A28A-07DB-4B99-9276-F3EEE3C85884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345E1578-E2B6-4245-9408-5D06B085908E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345E1578-E2B6-4245-9408-5D06B085908E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345E1578-E2B6-4245-9408-5D06B085908E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345E1578-E2B6-4245-9408-5D06B085908E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BE1325-810B-48EF-A183-DEA4AC06AE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BE1325-810B-48EF-A183-DEA4AC06AE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BE1325-810B-48EF-A183-DEA4AC06AE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BE1325-810B-48EF-A183-DEA4AC06AE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9713E52-9D3A-4D3A-98B9-FD7168C131CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9713E52-9D3A-4D3A-98B9-FD7168C131CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9713E52-9D3A-4D3A-98B9-FD7168C131CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9713E52-9D3A-4D3A-98B9-FD7168C131CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A45345D3-3B08-4004-BFBB-BDEA1756905B} = {16A56D35-A5A5-44CE-B79B-E48AA06FF09A}
+		{E4D4A28A-07DB-4B99-9276-F3EEE3C85884} = {16A56D35-A5A5-44CE-B79B-E48AA06FF09A}
+		{345E1578-E2B6-4245-9408-5D06B085908E} = {16A56D35-A5A5-44CE-B79B-E48AA06FF09A}
+		{25BE1325-810B-48EF-A183-DEA4AC06AE77} = {16A56D35-A5A5-44CE-B79B-E48AA06FF09A}
+		{B9713E52-9D3A-4D3A-98B9-FD7168C131CC} = {16A56D35-A5A5-44CE-B79B-E48AA06FF09A}
+	EndGlobalSection
+EndGlobal
