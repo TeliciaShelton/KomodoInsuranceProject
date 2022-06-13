@@ -7,10 +7,11 @@ public class DeveloperData
         FirstName=firstName;
         LastName=lastName;
         ID=id;
+        PluralsightAccess = PluralsightAccess;
     }
     //*Properties 
     public int ID {get; set; }
-    public string firstName {get; set; }
-    public string lastName {get; set; }
+    public string FirstName {get; set; }
+    public string LastName {get; set; }
     public bool PluralsightAccess {get; set; }
 }
