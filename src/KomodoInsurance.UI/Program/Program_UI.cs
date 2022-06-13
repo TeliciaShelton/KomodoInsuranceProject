@@ -5,32 +5,31 @@ using System.Threading.Tasks;
 
 public class Program_UI
 {
-      private readonly DeveloperRepo _dRepo = new DeveloperRepo();
+    private readonly DeveloperRepo _dRepo = new DeveloperRepo();
 
-      private readonly DevTeam.Repository _dtRepo = new DevTeamRepo();
-}
+    private readonly DevTeamRepo _dtRepo = new DevTeamRepo();
 
-public void Run()
+    public void Run()
     {
-      RunMenu();
+        RunMenu();
     }
 
     private void RunMenu()
     {
         bool continueToRun = true;
-        while (continueToRun)
+            while (continueToRun)
         {
-            Console.Clear();
-            System.Console.WriteLine("Please make a selection: /n" +
-            "1.Developer List \n" +
-            "2.Add Developer \n" +
-            "3.Remove Developer \n" +
-            "4. Find Developer by ID \n" +
-            "5. Developers with PluralSight \n" +
-            "6. Create new Developer Team \n" +
-            "7.Add Developer to Team \n" +
-            "8. Remove Developer from Team \n" 
-            );
+                Console.Clear();
+                System.Console.WriteLine("Please    make a selection: /n" +
+                 "1.Developer List \n" +
+                 "2.Add Developer \n" +
+                 "3.Remove Developer \n" +
+                 "4. Find Developer by ID \n" +
+                 "5. Developers with PluralSight \n" +
+                 "6. Create new Developer Team \n" +
+                 "7.Add Developer to Team \n" +
+                 "8. Remove Developer from Team \n" 
+                );
 
             string userInput = Console.ReadLine ();
             switch(userInput)
@@ -69,7 +68,7 @@ public void Run()
 
     }
     
-    private void PauseUntilKeyPress()
+    private void PauseUntilKeyPress();
 
     private void ShowAllDevelopers()
     {
@@ -132,7 +131,7 @@ public void Run()
 
         foreach(DeveloperData d in ListofDevelopers)
         (
-            DisplayDeveloper(d);
+            DisplayDeveloper(d)
         )
         try
         {
@@ -195,78 +194,79 @@ public void Run()
     }
     private void AddDeveloperToTeam()
     {
-            Console.Clear();
-            var availTeams = _dtRepo.GetAllTeams();
-            var currentDevelopers = _dRepo.GetAllDevelopers();
-            foreach(var t in availTeams)
+        Console.Clear();
+        var availTeams = _dtRepo.GetAllTeams();
+        var currentDevelopers = _dRepo.GetAllDevelopers();
+        foreach(var t in availTeams)
+        {
+            DisplayTeamList(t);
+        }
+
+        System.Console.WriteLine("Please select a team by ID: \n");
+        int userInput = int.Parse(Console.ReadLine());
+        var selectedTeam = _dtRepo.GetTeamByID(userInput);
+
+        if(selectedTeam != null)
+        {
+             Console.Clear();
+             System.Console.WriteLine("Please select developer by ID \n");
+             int developerSelected = int.Parse(Console.ReadLine());
+             var selectedDeveloper = _dRepo.GetDeveloperById(developerSelected);
+
+             if(selectedDeveloper != null)
             {
-                DisplayTeamList(t);
+                availTeams.DeveloperData.Add(selectedDeveloper);
+                currentDevelopers.Remove(selectedDeveloper);
             }
-
-            System.Console.WriteLine("Please select a team by ID: \n");
-            int userInput = int.Parse(Console.ReadLine());
-            var selectedTeam = _dtRepo.GetTeamByID(userInput);
-
-            if(selectedTeam != null)
+              else
             {
-                Console.Clear();
-                System.Console.WriteLine("Please select developer by ID \n");
-                int developerSelected = int.Parse(Console.ReadLine());
-                var selectedDeveloper = _dRepo.GetDeveloperById(developerSelected);
+                System.Console.WriteLine("Developer not added");
+            }
+        }
+        else
+        {
+            System.Console.WriteLine("Sorry, this team does not exist, please create a new team. ");
+        }
+    }
+    private void RemoveDeveloperFromTeam()
+    {
+        Console.Clear();
+        var availTeams = _dtRepo.GetAllTeams();
+        var currentDevelopers = _dRepo.GetAllTeams();
+        foreach(var t in availTeams)
+        {
+            DisplayTeamList(t);
+        }
 
-                if(selectedDeveloper != null)
-                {
-                    availTeams.DeveloperData.Add(selectedDeveloper);
-                    currentDevelopers.Remove(selectedDeveloper);
-                }
-                else
-                {
-                    System.Console.WriteLine("Darn no developer added");
-                }
+        System.Console.WriteLine("Please select a team by ID: \n");
+        int userInput = int.Parse(Console.ReadLine());
+        var selectedTeam = _dtRepo.GetTeamByID(userInput);
+
+        if(selectedTeam != null)
+        {
+            Console.Clear();
+            System.Console.WriteLine("Please select developer by ID. \n");
+            int developerSelected = int.Parse(Console.ReadLine());
+            var selectedDeveloper = _dRepo.GetDeveloperById(developerSelected);
+
+            if(selectedDeveloper != null)
+            {
+                availTeams.DeveloperData.Remove(selectedDeveloper);
+                currentDevelopers.Remove(selectedDeveloper);
             }
             else
             {
-                System.Console.WriteLine("Sorry this team does not exist, maybe you should create a new one!");
+                 System.Console.WriteLine("No Developer to remove");
             }
-
-        private void RemoveDeveloperFromTeam()
-        {
-            Console.Clear();
-            var availTeams = _dtRepo.GetAllTeams();
-            var currentDevelopers = _dRepo.GetAllTeams();
-            foreach(var t in availTeams)
-            {
-                DisplayTeamList(t);
-            }
-
-            System.Console.WriteLine("Please select a team by ID: \n");
-            int userInput = int.Parse(Console.ReadLine());
-            var selectedTeam = _dtRepo.GetTeamByID(userInput);
-
-            if(selectedTeam != null)
-            {
-                Console.Clear();
-                System.Console.WriteLine("Please select developer by ID \n");
-                int developerSelected = int.Parse(Console.ReadLine());
-                var selectedDeveloper = _dRepo.GetDeveloperById(developerSelected);
-
-                if(selectedDeveloper != null)
-                {
-                    availTeams.DeveloperData.Remove(selectedDeveloper);
-                    currentDevelopers.Remove(selectedDeveloper);
-                }
-                else
-                {
-                    System.Console.WriteLine("No Developers to remove");
-                }
-            }else
-                {
-                    System.Console.WriteLine("Developer could not be removed");
-                }
-
         }
-       
+        else
+            {
+                System.Console.WriteLine("Developer could not be removed");
+            }
+
     }
+} 
+
 
 
 
