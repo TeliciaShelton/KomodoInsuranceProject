@@ -4,7 +4,7 @@
     Telicia
     Connor
     Deron
- # Team Memeber #1 [Deron]
+ # Team Memeber #1 [Deron,Telicia, Conner]
     DevTeam Repository and partial UI
           Completion Date: 6/12/2022
             - 06/07: DevTeamRepo.Repo - laid out constructors
